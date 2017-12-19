@@ -1,1 +1,5 @@
 #!/usr/bin/env ruby
+
+require './lib/top_stories'
+
+TopStories::CLI.new.call
