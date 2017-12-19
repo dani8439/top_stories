@@ -1,3 +1,7 @@
+require "nokogiri"
+require 'pry'
+require "open-uri"
+
 require_relative "./top_stories/version"
 require_relative './top_stories/cli'
 require_relative './top_stories/article'
