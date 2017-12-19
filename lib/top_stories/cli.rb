@@ -25,14 +25,16 @@ class TopStories::CLI
     puts "9. Meryl Streep Waited By Her Phone ALL DAY. Hoping Rose McGowan Would Call - Tori Preston - Celebrity - Comments(25)"
     puts "10. BREAKING: T.J. Miller Accused of Sexual Assault - Tori Preston - Celebrity - Comments(141)"
 
+    @articles = TopStories::Article.current
   end
 
   def menu
-    puts "Enter the number of the article you would like to read more about, list, or exit."
+
     input = nil
     while input != "exit"
+      puts "Enter the number of the article you would like to read more about, list to see articles again, or exit."
       input = gets.strip.downcase
-      
+
       case input
       when "1"
         puts "More info on article 1"
@@ -54,12 +56,16 @@ class TopStories::CLI
         puts "More info on article 9"
       when "10"
         puts "More info on article 10"
+      when "list"
+        list_articles
+      else
+        puts "Not sure what you want, type list or exit."
       end
     end
   end
 
   def goodbye
-    puts "See you later for the newest articles:"
+    puts "See you later for the newest articles."
   end
 
 end
